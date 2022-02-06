@@ -19,7 +19,9 @@
   "homepage": "https://github.com/conorjkelly96/social-network-api-nosql#readme",
   "dependencies": {
     "apollo-server": "^3.6.2",
-    "graphql": "^16.3.0"
+    "express": "^4.17.2",
+    "graphql": "^16.3.0",
+    "mongoose": "^6.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
