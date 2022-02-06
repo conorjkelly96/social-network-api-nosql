@@ -27,14 +27,12 @@ const userSchema = {
     ],
   },
   thoughts: {
-    type: Number,
-    required: true,
-    min: 0,
-    max: 100,
+    type: Schema.Types.ObjectId,
+    ref: "thoughts",
   },
   friends: {
-    type: Date,
-    default: moment(),
+    type: Schema.Types.ObjectId,
+    ref: "friends",
   },
 };
 
