@@ -27,12 +27,12 @@ const userSchema = {
     ],
   },
   thoughts: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "thoughts",
   },
   friends: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "friends",
+    type: Schema.Types.ObjectId,
+    ref: "user",
   },
 };
 
