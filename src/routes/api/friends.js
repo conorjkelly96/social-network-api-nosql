@@ -7,7 +7,7 @@ const {
 
 const router = Router({ mergeParams: true });
 
-router.post("/", addNewReactionToThought);
-router.delete("/:reactionId", removeReactionFromThought);
+router.post("/", addNewFriendToUser);
+router.delete("/:friendId", removeFriendFromUser);
 
 module.exports = router;
