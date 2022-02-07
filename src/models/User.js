@@ -31,10 +31,12 @@ const userSchema = {
       ref: "thought",
     },
   ],
-  friends: {
-    type: Schema.Types.ObjectId,
-    ref: "user",
-  },
+  friends: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "user",
+    },
+  ],
 };
 
 const schema = new Schema(userSchema);
