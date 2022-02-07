@@ -6,9 +6,9 @@ const thoughts = require("./thoughts");
 const router = Router();
 
 // **`/api/users`**
-// **`/api/thoughts`**
-
 router.use("/users", users);
+
+// **`/api/thoughts`**
 router.use("/thoughts", thoughts);
 
 module.exports = router;

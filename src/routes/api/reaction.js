@@ -1,9 +1,9 @@
 const { Router } = require("express");
 
 const {
-  addNewFriendToUser,
-  removeFriendFromUser,
-} = require("../../controllers/api/friends");
+  addNewReactionToThought,
+  removeReactionFromThought,
+} = require("../../controllers/api/reaction");
 
 const router = Router({ mergeParams: true });
 

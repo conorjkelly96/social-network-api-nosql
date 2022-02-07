@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-const moment = require("moment");
 const { validateEmail } = require("../utils");
 
 const userSchema = {
@@ -26,10 +25,12 @@ const userSchema = {
       "Please fill a valid email address",
     ],
   },
-  thoughts: {
-    type: Schema.Types.ObjectId,
-    ref: "thought",
-  },
+  thoughts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "thought",
+    },
+  ],
   friends: {
     type: Schema.Types.ObjectId,
     ref: "user",
