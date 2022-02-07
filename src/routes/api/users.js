@@ -18,6 +18,6 @@ router.put("/:userId", updateUserById);
 router.delete("/:userId", deleteUserById);
 
 // **`/api/users/:userId/friends/:friendId`**
-router.use("/:userId/friends/:friendId", friends);
+router.use("/:userId/friends", friends);
 
 module.exports = router;

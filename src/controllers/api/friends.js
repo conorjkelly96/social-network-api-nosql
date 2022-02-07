@@ -3,11 +3,7 @@ const addNewFriendToUser = (req, res) => {
 };
 
 const removeFriendFromUser = (req, res) => {
-  // const { UserId } = req.params;
-
-  // console.log("UserId", UserId);
-
-  res.send("deleteUserById");
+  res.send("removeFriendFromUser");
 };
 
 module.exports = {

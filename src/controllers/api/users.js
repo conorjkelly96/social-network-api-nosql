@@ -2,9 +2,8 @@ const { User } = require("../../models");
 
 const getUsers = async (req, res) => {
   try {
-    res.send("getUser");
-    // const users = await User.find({});
-    // return res.json({ success: true, data: students });
+    const users = await User.find({});
+    return res.json({ success: true, data: users });
   } catch (error) {
     console.log(`[ERROR]: Failed to get Users | ${error.message}`);
     return res
@@ -15,10 +14,9 @@ const getUsers = async (req, res) => {
 
 const getUserById = async (req, res) => {
   try {
-    res.send("getUserById");
-    // const { userId } = req.params;
-    // const User = await User.findById(studentId);
-    // return res.json({ success: true, data: student });
+    const { userId } = req.params;
+    const user = await User.findById(userId);
+    return res.json({ success: true, data: user });
   } catch (error) {
     console.log(`[ERROR]: Failed to get User | ${error.message}`);
     return res
@@ -27,20 +25,48 @@ const getUserById = async (req, res) => {
   }
 };
 
-const createUser = (req, res) => {
-  res.send("createUser");
+const createUser = async (req, res) => {
+  try {
+    const { username, email } = req.body;
+    const newUser = await User.create({ username, email });
+    return res.json({ success: true, data: newUser });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to create User | ${error.message}`);
+    return res
+      .status(500)
+      .json({ success: false, error: "Failed to create User" });
+  }
 };
 
-const updateUserById = (req, res) => {
-  res.send("updateUserById");
+const updateUserById = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const data = req.body;
+
+    const updateUser = await User.findOneAndUpdate(userId, data);
+
+    return res.json({ success: true, data: updateUser });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to create User | ${error.message}`);
+    return res
+      .status(500)
+      .json({ success: false, error: "Failed to create User" });
+  }
 };
 
-const deleteUserById = (req, res) => {
-  // const { UserId } = req.params;
+const deleteUserById = async (req, res) => {
+  try {
+    const { userId } = req.params;
 
-  // console.log("UserId", UserId);
+    const deleteUser = await User.findByIdAndDelete(userId);
 
-  res.send("deleteUserById");
+    return res.json({ success: true, data: deleteUser });
+  } catch (error) {
+    console.log(`[ERROR]: Failed to create User | ${error.message}`);
+    return res
+      .status(500)
+      .json({ success: false, error: "Failed to create User" });
+  }
 };
 
 module.exports = {
