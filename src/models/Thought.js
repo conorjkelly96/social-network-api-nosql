@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const moment = require("moment");
+const { formatTimestamp } = require("../utils");
 
 const thoughtSchema = {
   thoughtText: {
@@ -10,13 +11,14 @@ const thoughtSchema = {
   },
   createdAt: {
     type: Date,
-    default: moment(),
+    default: Date.now(),
+    get: formatTimestamp,
   },
   username: {
     type: String,
     required: true,
   },
-  reactions: [{ type: Schema.Types.ObjectId, ref: "Reaction" }],
+  reactions: [],
 };
 
 const schema = new Schema(thoughtSchema, {

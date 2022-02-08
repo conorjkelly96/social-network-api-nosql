@@ -3,6 +3,9 @@ const validateEmail = (email) => {
   return validEmail.test(email);
 };
 
+const formatTimestamp = (date) => {};
+
 module.exports = {
   validateEmail,
+  formatTimestamp,
 };
