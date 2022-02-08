@@ -1,5 +1,4 @@
 const { Schema } = require("mongoose");
-const moment = require("moment");
 const { formatTimestamp } = require("../utils");
 
 const reactionSchema = {

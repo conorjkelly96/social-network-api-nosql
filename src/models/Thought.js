@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
-const moment = require("moment");
 const { formatTimestamp } = require("../utils");
+
+const reactionSchema = require("./Reaction");
 
 const thoughtSchema = {
   thoughtText: {
@@ -18,7 +19,7 @@ const thoughtSchema = {
     type: String,
     required: true,
   },
-  reactions: [],
+  reactions: [reactionSchema],
 };
 
 const schema = new Schema(thoughtSchema, {
