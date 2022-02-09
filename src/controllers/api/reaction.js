@@ -4,13 +4,13 @@ const { Thought } = require("../../models");
 const addNewReactionToThought = async (req, res) => {
   try {
     const reaction = req.body;
-    const { reactionId } = req.params;
 
-    const thought = await Thought.findByIdAndUpdate(reaction._id, {
-      $push: { reactions: reaction },
-    });
+    console.log(reaction._id);
 
-    console.log(thought);
+    const thought = await Thought.updateOne(
+      { _id: reaction._id },
+      { $push: { reactions: { reaction } } }
+    );
 
     return res.json({ success: true, data: thought });
   } catch (error) {
