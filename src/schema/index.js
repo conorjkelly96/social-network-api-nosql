@@ -23,6 +23,27 @@ const init = async () => {
 
     console.log("[INFO]: Successfully seeded thoughts");
 
+    const usersFromDb = await User.find({});
+    const thoughtsFromDb = await Thought.find({});
+
+    const promises = thoughtsFromDb.map((thought) => {
+      const thoughtUsername = thought.username;
+
+      const thoughtUser = usersFromDb.find((user) => {
+        return user.username === thoughtUsername;
+      });
+
+      const userId = thoughtUser._id.toString();
+
+      const thoughtId = thought._id;
+
+      User.findByIdAndUpdate(userId, {
+        thoughts: [...thoughtUser.thoughts, thoughtId.toString()],
+      });
+    });
+
+    await Promise.all(promises);
+
     await mongoose.disconnect();
   } catch (error) {
     console.log(`[ERROR]: Database connection failed | ${error.message}`);

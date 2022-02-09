@@ -1,5 +1,8 @@
 const addNewReactionToThought = (req, res) => {
-  res.send("addNewReactionToThought");
+  const reaction = req.body;
+  const { reactionId } = req.params;
+
+  console.log(reactionId);
 };
 
 const removeReactionFromThought = (req, res) => {
