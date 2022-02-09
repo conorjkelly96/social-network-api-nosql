@@ -37,13 +37,24 @@ const init = async () => {
       await User.findByIdAndUpdate(user._id, { ...user });
     });
 
+    const userIdsArray = usersFromDb.map((user) => user._id);
+
     // seed friends with users
-    const friendsPromises = usersFromDb.forEach((user) => {
-      // get a random user id
+    const friendsPromises = usersFromDb.map(async (user) => {
       // update operation on the friends and push it into the friends array
+      const shuffledUserIds = userIdsArray.sort(() => 0.5 - Math.random());
+
+      const slicedArray = shuffledUserIds.slice(
+        Math.floor(Math.random() * shuffledUserIds.length)
+      );
+
+      const friends = slicedArray.filter((userId) => userId !== user._id);
+
+      await User.findByIdAndUpdate(user._id, { friends });
     });
 
     await Promise.all(thoughtPromises);
+    await Promise.all(friendsPromises);
 
     await mongoose.disconnect();
   } catch (error) {
