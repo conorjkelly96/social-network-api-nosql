@@ -1,19 +1,19 @@
 const users = [
   {
-    username: "partiboi",
-    email: "partiboi@gmail.com",
+    username: "DonaldTrump",
+    email: "DonaldTrump@gmail.com",
   },
   {
-    username: "knoxville33",
-    email: "knoxville33@gmail.com",
+    username: "TheNotoriousMMA",
+    email: "thenotoriousmma@gmail.com",
   },
   {
-    username: "frodobaggins",
-    email: "frodobaggins@gmail.com",
+    username: "joerogan",
+    email: "joerogan@gmail.com",
   },
   {
-    username: "dumbledore1757",
-    email: "dumbledore1757@gmail.com",
+    username: "TimJDillon",
+    email: "timjdillon@gmail.com",
   },
 ];
 

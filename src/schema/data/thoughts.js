@@ -2,58 +2,58 @@ const thoughts = [
   {
     thoughtText:
       "There is always light. If only we're brave enough to see it. If only we're brave enough to be it",
-    username: "partiboi",
+    username: "DonaldTrump",
     reactions: [
       {
         reactionBody: "Woooooooooow!",
-        username: "knoxville33",
+        username: "TheNotoriousMMA",
       },
       {
         reactionBody: "Love it hunny!",
-        username: "frodobaggins",
+        username: "joerogan",
       },
     ],
   },
   {
     thoughtText: "I have learned not to allow rejection to move me.",
-    username: "knoxville33",
+    username: "TheNotoriousMMA",
     reactions: [
       {
         reactionBody: "So cool!",
-        username: "partiboi",
+        username: "joerogan",
       },
       {
         reactionBody: "Nice!",
-        username: "frodobaggins",
+        username: "DonaldTrump",
       },
     ],
   },
   {
     thoughtText:
       "Don't save your best for when you think the material calls for it.",
-    username: "frodobaggins",
+    username: "joerogan",
     reactions: [
       {
         reactionBody: "Urm, nah",
-        username: "knoxville33",
+        username: "TimJDillon",
       },
       {
         reactionBody: "THIS.",
-        username: "dumbledore1757",
+        username: "DonaldTrump",
       },
     ],
   },
   {
     thoughtText: "You can't rely on how you look to sustain you.",
-    username: "dumbledore1757",
+    username: "TimJDillon",
     reactions: [
       {
         reactionBody: "Woooooooooow!",
-        username: "knoxville33",
+        username: "joerogan",
       },
       {
         reactionBody: "Love it hunny!",
-        username: "frodobaggins",
+        username: "TheNotoriousMMA",
       },
     ],
   },
