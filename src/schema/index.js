@@ -26,23 +26,24 @@ const init = async () => {
     const usersFromDb = await User.find({});
     const thoughtsFromDb = await Thought.find({});
 
-    const promises = thoughtsFromDb.map((thought) => {
-      const thoughtUsername = thought.username;
+    // seed thoughts with users
+    const thoughtPromises = thoughtsFromDb.map(async (thought) => {
+      const username = thought.username;
 
-      const thoughtUser = usersFromDb.find((user) => {
-        return user.username === thoughtUsername;
-      });
+      const user = usersFromDb.find((user) => user.username === username);
 
-      const userId = thoughtUser._id.toString();
+      user.thoughts.push(thought._id.toString());
 
-      const thoughtId = thought._id;
-
-      User.findByIdAndUpdate(userId, {
-        thoughts: [...thoughtUser.thoughts, thoughtId.toString()],
-      });
+      await User.findByIdAndUpdate(user._id, { ...user });
     });
 
-    await Promise.all(promises);
+    // seed friends with users
+    const friendsPromises = usersFromDb.forEach((user) => {
+      // get a random user id
+      // update operation on the friends and push it into the friends array
+    });
+
+    await Promise.all(thoughtPromises);
 
     await mongoose.disconnect();
   } catch (error) {
