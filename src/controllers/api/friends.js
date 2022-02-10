@@ -23,20 +23,18 @@ const addNewFriendToUser = async (req, res) => {
 
 const removeFriendFromUser = async (req, res) => {
   try {
-    const { thoughtId, reactionId } = req.params;
+    const removeFriend = await User.findByIdAndUpdate(
+      { _id: req.params.userId },
+      { $pull: { friends: req.params.friendId } },
+      { new: true }
+    );
 
-    console.log(thoughtId, reactionId);
-
-    const reaction = await Thought.findByIdAndUpdate(thoughtId, {
-      $pull: { reactions: { _id: reactionId } },
-    });
-
-    return res.json({ success: true, data: reaction });
+    return res.json({ success: true, data: removeFriend });
   } catch (error) {
-    console.log(`[ERROR]: Failed to delete reaction | ${error.message}`);
+    console.log(`[ERROR]: Failed to delete friend | ${error.message}`);
     return res
       .status(500)
-      .json({ success: false, error: "Failed to delete reaction" });
+      .json({ success: false, error: "Failed to delete friend" });
   }
 };
 
