@@ -9,7 +9,7 @@ const {
 } = require("../../controllers/api/thoughts");
 
 const router = Router({ mergeParams: true });
-const reactions = require("./reaction");
+const reactions = require("./reactions");
 
 router.get("/", getThoughts);
 router.get("/:thoughtId", getThoughtById);

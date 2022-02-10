@@ -5,12 +5,11 @@ const addNewReactionToThought = async (req, res) => {
   try {
     const reaction = req.body;
 
-    console.log(reaction._id);
+    const { thoughtId } = req.params;
 
-    const thought = await Thought.updateOne(
-      { _id: reaction._id },
-      { $push: { reactions: { reaction } } }
-    );
+    const thought = await Thought.findByIdAndUpdate(thoughtId, {
+      $push: { reactions: reaction },
+    });
 
     return res.json({ success: true, data: thought });
   } catch (error) {
