@@ -16,6 +16,16 @@ A RESTful API for a social network web application where users can share their t
 - MongoDB
   - Mongoose ODM
 
+## Getting Started
+
+Run the following commands to start the application.
+
+```
+npm i
+npm run seed
+npm run start
+```
+
 ## Endpoints
 
 When using the application, please see example responses on the GET, POST, PUT and DELETE requests.

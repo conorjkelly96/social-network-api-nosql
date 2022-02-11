@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "74300aa5-978f-44ec-80f5-65535b7a7657",
+		"name": "thoughtbaseDb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Friends",
+					"item": [
+						{
+							"name": "Add Friend To User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": \"62058930fcfeb163d2ce7c7f\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/users/62058930fcfeb163d2ce7c7c/friends",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"users",
+										"62058930fcfeb163d2ce7c7c",
+										"friends"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Friend from User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/users/62058930fcfeb163d2ce7c7c/friends/62058930fcfeb163d2ce7c7d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"users",
+										"62058930fcfeb163d2ce7c7c",
+										"friends",
+										"62058930fcfeb163d2ce7c7d"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/users/62017a862e20295adcc25d4c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"62017a862e20295adcc25d4c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n    \"username\": \"stevengerrard\",\n    \"email\": \"stevengerrard@gmail.com\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User By ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"updateemail@gmail.com\",\n    \"username\": \"usernameUpdate123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/users/62017a862e20295adcc25d4c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"62017a862e20295adcc25d4c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Thought",
+			"item": [
+				{
+					"name": "Reactions",
+					"item": [
+						{
+							"name": "Add Reaction To Thought",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n    \"reactionBody\": \"Walk through fire for you, just let me adore you, like it's last thing that I'll ever do\",\n    \"username\": \"usernameUpdate123\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/thoughts/62042bed6bb21c320dc2f43c/reactions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"thoughts",
+										"62042bed6bb21c320dc2f43c",
+										"reactions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove Reaction From Thought",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/thoughts/1/reactions/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"thoughts",
+										"1",
+										"reactions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Thoughts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/thoughts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"thoughts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thought by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/thoughts/62042bed6bb21c320dc2f43c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"thoughts",
+								"62042bed6bb21c320dc2f43c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thought",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"thoughtText\": \"Walk through fire for you, just let me adore you, like it's last thing that I'll ever do\",\n    \"username\": \"usernameUpdate123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/thoughts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"thoughts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thought by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"thoughtText\": \"Ahhhhhh, walk through fire for you, just let me adore you. Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.Ahhhhhh, walk through fire for you, just let me adore you.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/thoughts/62017a862e20295adcc25d52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"thoughts",
+								"62017a862e20295adcc25d52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thought by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/thoughts/62018efd69dd35e5d511d4e7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"thoughts",
+								"62018efd69dd35e5d511d4e7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
