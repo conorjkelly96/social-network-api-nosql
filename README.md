@@ -200,23 +200,206 @@ When using the application, please see example responses on the GET, POST, PUT a
 }
 ```
 
+### `GET` to get all thoughts
+
 **`/api/thoughts`**
 
-- `GET` to get all thoughts
-- `GET` to get a single thought by its `_id`
-- `POST` to create a new thought (don't forget to push the created thought's `_id` to the associated user's `thoughts` array field)
+```json
+// sample response
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "62058930fcfeb163d2ce7c82",
+      "thoughtText": "There is always light. If only we're brave enough to see it. If only we're brave enough to be it",
+      "username": "DonaldTrump",
+      "reactions": [
+        {
+          "reactionId": "62058930fcfeb163d2ce7c83",
+          "reactionBody": "Woooooooooow!",
+          "username": "TheNotoriousMMA",
+          "createdAt": "2022-02-10T21:52:48.033Z",
+          "_id": "62058930fcfeb163d2ce7c84"
+        }
+      ],
+      "__v": 0,
+      "reactionCount": 1
+    },
+    {
+      "_id": "62058930fcfeb163d2ce7c87",
+      "thoughtText": "I have learned not to allow rejection to move me.",
+      "username": "TheNotoriousMMA",
+      "reactions": [
+        {
+          "reactionId": "62058930fcfeb163d2ce7c88",
+          "reactionBody": "So cool!",
+          "username": "joerogan",
+          "createdAt": "2022-02-10T21:52:48.033Z",
+          "_id": "62058930fcfeb163d2ce7c89"
+        },
+        {
+          "reactionId": "62058930fcfeb163d2ce7c8a",
+          "reactionBody": "Nice!",
+          "username": "DonaldTrump",
+          "createdAt": "2022-02-10T21:52:48.033Z",
+          "_id": "62058930fcfeb163d2ce7c8b"
+        }
+      ],
+      "__v": 0,
+      "reactionCount": 2
+    },
+    {
+      "_id": "62058930fcfeb163d2ce7c8c",
+      "thoughtText": "Don't save your best for when you think the material calls for it.",
+      "username": "joerogan",
+      "reactions": [
+        {
+          "reactionId": "62058930fcfeb163d2ce7c8d",
+          "reactionBody": "Urm, nah",
+          "username": "TimJDillon",
+          "createdAt": "2022-02-10T21:52:48.033Z",
+          "_id": "62058930fcfeb163d2ce7c8e"
+        },
+        {
+          "reactionId": "62058930fcfeb163d2ce7c8f",
+          "reactionBody": "THIS.",
+          "username": "DonaldTrump",
+          "createdAt": "2022-02-10T21:52:48.033Z",
+          "_id": "62058930fcfeb163d2ce7c90"
+        }
+      ],
+      "__v": 0,
+      "reactionCount": 2
+    },
+    {
+      "_id": "62058930fcfeb163d2ce7c91",
+      "thoughtText": "You can't rely on how you look to sustain you.",
+      "username": "TimJDillon",
+      "reactions": [
+        {
+          "reactionId": "62058930fcfeb163d2ce7c92",
+          "reactionBody": "Woooooooooow!",
+          "username": "joerogan",
+          "createdAt": "2022-02-10T21:52:48.033Z",
+          "_id": "62058930fcfeb163d2ce7c93"
+        },
+        {
+          "reactionId": "62058930fcfeb163d2ce7c94",
+          "reactionBody": "Love it hunny!",
+          "username": "TheNotoriousMMA",
+          "createdAt": "2022-02-10T21:52:48.033Z",
+          "_id": "62058930fcfeb163d2ce7c95"
+        }
+      ],
+      "__v": 0,
+      "reactionCount": 2
+    }
+  ]
+}
+```
+
+### `GET` to get a single thought by its `_id`
+
+**`/api/thoughts/:thoughtId`**
+
+```json
+// sample response
+{
+  "success": true,
+  "data": {
+    "_id": "62058930fcfeb163d2ce7c91",
+    "thoughtText": "You can't rely on how you look to sustain you.",
+    "username": "TimJDillon",
+    "reactions": [
+      {
+        "reactionId": "62058930fcfeb163d2ce7c92",
+        "reactionBody": "Woooooooooow!",
+        "username": "joerogan",
+        "createdAt": "2022-02-10T21:52:48.033Z",
+        "_id": "62058930fcfeb163d2ce7c93"
+      },
+      {
+        "reactionId": "62058930fcfeb163d2ce7c94",
+        "reactionBody": "Love it hunny!",
+        "username": "TheNotoriousMMA",
+        "createdAt": "2022-02-10T21:52:48.033Z",
+        "_id": "62058930fcfeb163d2ce7c95"
+      }
+    ],
+    "__v": 0,
+    "reactionCount": 2
+  }
+}
+```
+
+### `POST` to create a new thought
+
+**`/api/thoughts/:thoughtId`**
 
 ```json
 // example data
 {
-  "thoughtText": "Here's a cool thought...",
-  "username": "lernantino",
-  "userId": "5edff358a0fcb779aa7b118b"
+  "thoughtText": "Walk through fire for you, just let me adore you, like it's last thing that I'll ever do",
+  "username": "TheNotoriousMMA"
 }
 ```
 
-- `PUT` to update a thought by its `_id`
+```json
+// sample response
+{
+  "success": true,
+  "data": {
+    "thoughtText": "Walk through fire for you, just let me adore you, like it's last thing that I'll ever do",
+    "username": "TheNotoriousMMA",
+    "_id": "62060bb69232637098b59408",
+    "reactions": [],
+    "__v": 0,
+    "reactionCount": 0
+  }
+}
+```
+
+### `PUT` to update a thought by its `_id`
+
+**`/api/thoughts/:thoughtId`**
+
+```json
+// sample request
+{
+  "thoughtText": "Ahhhhhh, walk through fire for you, just let me adore you. "
+}
+```
+
+```json
+// sample response
+{
+  "success": true,
+  "data": {
+    "_id": "62060bb69232637098b59408",
+    "thoughtText": "Ahhhhhh, walk through fire for you, just let me adore you.",
+    "username": "TheNotoriousMMA",
+    "reactions": [],
+    "__v": 0,
+    "reactionCount": 0
+  }
+}
+```
+
 - `DELETE` to remove a thought by its `_id`
+
+```json
+{
+  "success": true,
+  "data": {
+    "_id": "62060bb69232637098b59408",
+    "thoughtText": "Ahhhhhh, walk through fire for you, just let me adore you.",
+    "username": "TheNotoriousMMA",
+    "reactions": [],
+    "__v": 0,
+    "reactionCount": 0
+  }
+}
+```
 
 ---
 
@@ -224,7 +407,3 @@ When using the application, please see example responses on the GET, POST, PUT a
 
 - `POST` to create a reaction stored in a single thought's `reactions` array field
 - `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
-
-```
-
-```
