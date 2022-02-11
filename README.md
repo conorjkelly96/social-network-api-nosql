@@ -171,9 +171,9 @@ When using the application, please see example responses on the GET, POST, PUT a
 
 ---
 
-**`/api/users/:userId/friends/:friendId`**
-
 ### `POST` to add a new friend to a user's friend list
+
+**`/api/users/:userId/friends/:friendId`**
 
 ```json
 // sample response
@@ -195,6 +195,8 @@ When using the application, please see example responses on the GET, POST, PUT a
 ```
 
 ### `DELETE` to remove a friend from a user's friend list
+
+**`/api/users/:userId/friends/:friendId`**
 
 ```json
 {
@@ -426,6 +428,8 @@ When using the application, please see example responses on the GET, POST, PUT a
 ```
 
 ### `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
+
+**`/api/thoughts/:thoughtId/reactions`**
 
 ```json
 {
