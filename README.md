@@ -403,7 +403,52 @@ When using the application, please see example responses on the GET, POST, PUT a
 
 ---
 
+### `POST` to create a reaction stored in a single thought's `reactions` array field
+
 **`/api/thoughts/:thoughtId/reactions`**
 
-- `POST` to create a reaction stored in a single thought's `reactions` array field
-- `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
+```json
+// sample response
+{
+  "reactionBody": "Yes mate!",
+  "username": "TheNotoriousMMA"
+}
+```
+
+### `DELETE` to pull and remove a reaction by the reaction's `reactionId` value
+
+```json
+{
+  "success": true,
+  "data": {
+    "_id": "62058930fcfeb163d2ce7c8c",
+    "thoughtText": "Don't save your best for when you think the material calls for it.",
+    "username": "joerogan",
+    "reactions": [
+      {
+        "reactionId": "62058930fcfeb163d2ce7c8d",
+        "reactionBody": "Urm, nah",
+        "username": "TimJDillon",
+        "createdAt": "2022-02-10T21:52:48.033Z",
+        "_id": "62058930fcfeb163d2ce7c8e"
+      },
+      {
+        "reactionId": "62058930fcfeb163d2ce7c8f",
+        "reactionBody": "THIS.",
+        "username": "DonaldTrump",
+        "createdAt": "2022-02-10T21:52:48.033Z",
+        "_id": "62058930fcfeb163d2ce7c90"
+      },
+      {
+        "reactionId": "62060d309232637098b5940f",
+        "reactionBody": "Yes mate!",
+        "username": "TheNotoriousMMA",
+        "createdAt": "2022-02-11T06:46:57.323Z",
+        "_id": "62060d309232637098b59410"
+      }
+    ],
+    "__v": 0,
+    "reactionCount": 3
+  }
+}
+```
