@@ -1,14 +1,12 @@
 # Social Network API (NoSQL)
 
-# Note Taker
-
 ## Description
 
-A full stack web application allowing users to create, track and delete notes leveraging technologies such as express.js.
+A RESTful API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list, leveraging Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
 # Links
 
-[Application Walkthrough](https://dashboard.heroku.com/apps/note-taker-application-express)
+[Application Walkthrough](https://drive.google.com/drive/folders/1gKsgNqtfZqtUcg9pN6_animwjBovwP1f?usp=sharing)
 
 ## Technologies
 
@@ -16,7 +14,7 @@ A full stack web application allowing users to create, track and delete notes le
   - node.js
   - express.js
 - MongoDB
-  - Mongoose
+  - Mongoose ODM
 
 ## Endpoints
 
