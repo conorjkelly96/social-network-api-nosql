@@ -1,0 +1,32 @@
+{
+  "name": "social-network-api-nosql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "seed": "node src/schema/index.js",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conorjkelly96/social-network-api-nosql.git"
+  },
+  "keywords": [],
+  "author": "Conor Kelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conorjkelly96/social-network-api-nosql/issues"
+  },
+  "homepage": "https://github.com/conorjkelly96/social-network-api-nosql#readme",
+  "dependencies": {
+    "apollo-server": "^3.6.2",
+    "express": "^4.17.2",
+    "graphql": "^16.3.0",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
